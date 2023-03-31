@@ -1,0 +1,35 @@
+<p>student works!</p>
+<br>
+
+<table border="1" align="center">
+
+    <tr>
+        <th>Student No</th>
+        <th>Student Name</th>
+        <th>Student Age</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+    <tr *ngFor="let student of students">
+        <td>{{student.sno}}</td>
+        <td>{{student.sname}}</td>
+        <td>{{student.age}}</td>
+        <td> <button (click)="update(student.sno)">Update</button></td>
+        <td> <button (click)="delete(student.sno)">Delete</button></td>
+    </tr>
+
+</table>
+<br>
+
+Student No:
+<input type="text" [(ngModel)]="studObj.sno"><br>
+
+Student No:
+<input type="text" [(ngModel)]="studObj.sname"><br>
+
+Student No:
+<input type="text" [(ngModel)]="studObj.age"><br>
+
+<button (click)="save()">Save</button>
+<button (click)="edit()">Edit</button>
